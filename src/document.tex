@@ -1,0 +1,154 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%
+% Préambule du document %
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\documentclass[12pt,a4paper,french,twoside,openright,oldfontcommands,final]{memoir}
+\synctex=1
+\usepackage[tmargin=3cm,bmargin=3cm,lmargin=3cm,rmargin=3cm]{geometry} % marges obligatoires 3 cm g. et dr.
+\usepackage{mathptmx} % police Times
+\renewcommand{\sfdefault}{lmss}
+\renewcommand{\ttdefault}{lmtt}
+\renewcommand{\familydefault}{\rmdefault}
+\setlength{\parskip}{\smallskipamount} % petit espacement entre les paragraphes
+%\setlength{\parindent}{0pt} % pas d'alinéa
+\setSpacing{1.5} % interligne un et demi
+
+\setcounter{secnumdepth}{4} % profondeur de la TdM
+\setcounter{tocdepth}{4}
+
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{color}
+\usepackage{xspace}
+\usepackage{babel}
+\addto\extrasfrench{%
+   \providecommand{\og}{\leavevmode\flqq~}
+   \providecommand{\fg}{\ifdim\lastskip>\z@\unskip\fi~\frqq}
+}
+\usepackage{graphicx} % images
+\usepackage{numprint} % affichage correct des nombres et unités
+
+\usepackage{amsmath} % maths
+\usepackage{amsthm} % théorèmes numérotés
+\makeatletter
+\theoremstyle{plain}
+\ifx\thechapter\undefined
+\newtheorem{thm}{\protect\theoremname}
+\else
+\newtheorem{thm}{\protect\theoremname}[chapter]
+\fi
+\theoremstyle{definition}
+\newtheorem{defn}[thm]{\protect\definitionname}
+\makeatother
+\providecommand{\definitionname}{Définition}
+\providecommand{\theoremname}{Théorème}
+
+%\usepackage[ruled, lined]{algorithm2e} % mise en page d'algorithmes
+%\usepackage{listings} % listings de code source
+\usepackage{array} % tableaux améliorés
+\usepackage{rotating} % tableaux couchés
+\usepackage{url} % affichage correct des urls
+\usepackage[backgroundcolor=green,linecolor=green]{todonotes} % to-do notes
+
+\usepackage[unicode=true, bookmarks=true,bookmarksnumbered=true,
+ bookmarksopen=true,bookmarksopenlevel=0,breaklinks=true,pdfborder={0 0 1},
+ backref=false,colorlinks=false]{hyperref} % liens hypertexte et signets
+\hypersetup{
+ pdftitle={ Titre du mémoire }, 
+ pdfauthor={Richard Mathot},
+ pdfkeywords={ mots-clés }
+}
+% TODO HYPERREFERENCES A COMPLETER
+
+%%%%%%%%%%%%%%%%%%%%%%%
+% Macros personnelles %
+%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%
+% Document %
+%%%%%%%%%%%%
+\begin{document}
+\frontmatter
+
+
+%%%%%%%%%%%%%%%%%
+% Page de titre %
+%%%%%%%%%%%%%%%%%
+\pdfbookmark[-1]{Titre du mémoire}{title} % TODO mettre à jour le signet
+\input{pagedegarde.tex}
+
+
+%%%%%%%%%%%%%%%%%%%%
+% Acknowledgements %
+%%%%%%%%%%%%%%%%%%%%
+\chapter*{\pdfbookmark[0]{Remerciements}{rem} Remerciements}
+
+\input{remerciements.tex}
+
+
+%%%%%%%
+% TdM %
+%%%%%%%
+\chapter*{\pdfbookmark[0]{Table des matières}{tdm} Table des matières}
+
+\makeatletter
+\@starttoc{toc}
+\makeatother
+
+
+%%%%%%%%%%%
+% Contenu %
+%%%%%%%%%%%
+\mainmatter
+\renewcommand{\chaptermark}[1]{\markboth{\textsc{#1}}{\textsc{#1}}} 
+
+\input{introduction.tex}
+
+\renewcommand{\chaptermark}[1]{\markboth{\textsc{\chaptername~\thechapter{} -- #1}}{}} 
+\renewcommand{\sectionmark}[1]{\markright{\textsc{\thesection{} #1}}}
+
+\input{chapitre1.tex}
+
+\input{chapitre2.tex}
+
+\input{chapitre3.tex}
+
+\renewcommand{\chaptermark}[1]{\markboth{\textsc{#1}}{\textsc{#1}}} 
+
+\input{conclusions.tex} 
+
+
+%%%%%%%%%%%%%%%%%
+% Bibliographie %
+%%%%%%%%%%%%%%%%%
+\backmatter{}
+\pagenumbering{Roman}
+\setcounter{page}{1}
+
+\nocite{*}
+\small
+\bibliography{bibliographie}
+\bibliographystyle{plain}
+\normalsize
+
+
+%%%%%%%%%%
+% Résumé %
+%%%%%%%%%%
+\cleardoublepage{}
+
+% TODO cette page doit être en 4e de couverture
+\chapter*{\pdfbookmark[0]{Quatrième de couverture}{4couv} Titre du mémoire}
+
+
+\section*{\pdfbookmark[1]{Mots-clés}{motscles} Mots-clés}
+- un mot-clé -
+
+\section*{\pdfbookmark[1]{Résumé}{resume} Résumé}
+- le résumé - 
+
+\thispagestyle{empty}
+
+
+\end{document}
+
