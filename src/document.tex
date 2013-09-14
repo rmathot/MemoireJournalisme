@@ -9,7 +9,6 @@
 \renewcommand{\ttdefault}{lmtt}
 \renewcommand{\familydefault}{\rmdefault}
 \setlength{\parskip}{\smallskipamount} % petit espacement entre les paragraphes
-%\setlength{\parindent}{0pt} % pas d'alinéa
 \setSpacing{1.5} % interligne un et demi
 
 \setcounter{secnumdepth}{4} % profondeur de la TdM
@@ -42,8 +41,7 @@
 \providecommand{\definitionname}{Définition}
 \providecommand{\theoremname}{Théorème}
 
-%\usepackage[ruled, lined]{algorithm2e} % mise en page d'algorithmes
-%\usepackage{listings} % listings de code source
+
 \usepackage{array} % tableaux améliorés
 \usepackage{rotating} % tableaux couchés
 \usepackage{url} % affichage correct des urls
@@ -52,11 +50,10 @@
  bookmarksopen=true,bookmarksopenlevel=0,breaklinks=true,pdfborder={0 0 1},
  backref=false,colorlinks=false]{hyperref} % liens hypertexte et signets
 \hypersetup{
- pdftitle={ Titre du mémoire }, 
+ pdftitle={Le journalisme de données et la presse francophone belge}, 
  pdfauthor={Richard Mathot},
- pdfkeywords={ mots-clés }
+ pdfkeywords={journalisme, informatique, bases de données, presse, pratiques, Belgique}
 }
-% TODO HYPERREFERENCES A COMPLETER
 
 %%%%%%%%%%%%%%%%%%%%%%%
 % Macros personnelles %
@@ -73,7 +70,7 @@
 %%%%%%%%%%%%%%%%%
 % Page de titre %
 %%%%%%%%%%%%%%%%%
-\pdfbookmark[-1]{Titre du mémoire}{title} % TODO mettre à jour le signet
+\pdfbookmark[-1]{Le journalisme de données et la presse francophone belge}{title}
 \input{pagedegarde.tex}
 
 
@@ -82,14 +79,6 @@
 %%%%%%%%%%%
 \clearpage
 \input{licence.tex}
-
-
-%%%%%%%%%%%%%%%%%%%%
-% Acknowledgements %
-%%%%%%%%%%%%%%%%%%%%
-% \chapter*{\pdfbookmark[0]{Remerciements}{rem} Remerciements}
-% 
-% \input{remerciements.tex}
 
 
 %%%%%%%
