@@ -76,7 +76,7 @@ Son exemple: en plus de publier un article traitant d'un incendie dans le
 journal local, autant publier un site recensant tous les incendies du quartier 
 et permettant de les trier selon une série de critères par type, lieu, date\dots
 Il réalisera ensuite une série de \og cartes du crime \fg de 
-Chicago. Ces cartes permettaient\footnote{Le site \em ChicagoCrime\em n'est plus en ligne aujourd'hui.} à chacun vérifier quels crimes étaient commis dans le voisinage, et de se faire une idée de la dangerosité de l'un ou l'autre quartier.
+Chicago. Ces cartes permettaient\footnote{Le site \textit{ChicagoCrime} n'est plus en ligne aujourd'hui.} à chacun vérifier quels crimes étaient commis dans le voisinage, et de se faire une idée de la dangerosité de l'un ou l'autre quartier.
 
 
 Les racines du journalisme de données remontent pourtant à plus d'un demi-siècle.
@@ -124,6 +124,8 @@ que l'on soupçonne leur existence, il est parfois possible de déposer une dema
 document recherché (par exemple: les tableaux Excel) ou de se limiter à un site précis. 
 Cette techique permet de faire \og remonter\fg des documents noyés dans la masse du web.
 \item Il existe aussi de nombreuses bases de données disponibles en ligne (par exemple : DataHub\footnote{\url{http://datahub.io/}} permet de trouver des collections de données, en fonction de mots-clés).
+\item Le \textit{scraping} est une technique consistant à récupérer le contenu d'une page web ou d'un ensemble de pages, et d'en extraire les éléments intéressants à 
+l'aide d'un programme informatique.
 \item Des bases de données non publiques existent : mises en places en interne pour des recherches universitaires, par des passionnés, par des associations... elles nécessitent alors un contact pour y avoir accès.
 \item Le \em crowdsourcing\em\, (en français : externalisation des connaissances), repose sur le principe de \og l'appel à la foule \fg et profite de l'aide du public pour
 construire ou compléter la base de données.
@@ -131,11 +133,89 @@ construire ou compléter la base de données.
 
 \subsection{Nettoyage des données}
 
+Cette étape technique est facultative, si le journaliste a eu la chance 
+de recevoir une collection de données directement exploitable.
+
+Par contre, si les données sont dans un format peu exploitable (exemples : les
+documents PDF ont été conçus pour l'impression mais ne sont pas utilisables
+directement), il faut parvenir à les encoder dans un tableur ou un logiciel 
+de base de données. Dans les cas les plus compliqués, l'assistance d'un 
+développeur chevronné sera indispensable.
+
+Un outil comme Open Refine\footnote{\url{http://openrefine.org/}} permet de
+supprimer les doublons, de vérifier d'éventuelles fautes de frappe, de regrouper
+des données dont le sens est similaire mais dont la représentation informatique
+est différente (par exemple : \og Germany \fg et \og Allemagne \fg indiquent le même 
+pays, mais il faut le faire comprendre à l'ordinateur).
+
 \subsection{Exploitation des données}
+
+Pour trouver une information pertinente dans un lot de données, il faut d'abord établir
+une liste de questions auxquelles on cherche une réponse. Ces questions vont permettre d'angler la recherche. Par exemple, si l'on dispose des chiffres de la Politique Agricole Commune de l'Union européenne, il faut s'avoir si l'on s'intéresse à un ou à plusieurs états, sur quelle période, à toutes les exploitations ou à une catégorie particulière\dots pour pouvoir répondre à la question "Les très petites fermes sont-elles menacées par la PAC?".
+
+Tirer des informations signifiantes de données chiffrées n'est pas une tâche 
+évidente. Le journaliste aura d'ailleurs 'tout intérêt à réviser les concepts statistiques de base. 
+Nicolas Kayser-Bril rappelle dans \cite{handbookfr} les trois questions à se poser 
+devant une série de données:
+
+\begin{enumerate}
+\item Comment les données ont-elles été recueillies ? Les données ont-elles été 
+fabriquées ou maquillées ? 
+\item Que nous apprennent les données ? Par exemple, lorsqu'une moyenne est citée, a-t-
+elle du sens ? A-t-on une idée de la distribution de la population?
+\item Les données sont-elles fiables ? L'échantillon est-il assez grand et 
+représentatif ? Ne confond-on pas corrélation et coïncidence ?
+\end{enumerate}
+
+En cas de données non-chiffrées (par exemple : une base de données contenant un carnet
+de commandes), il faut parvenir à trier les informations qui peuvent répondre à la 
+question posée, réaliser des liens entre différents éléments factuels.
+Par exemple, relier un courriel d'une banque des Caraïbes à une société cliente avec 
+la liste des administrateurs de la société pour faire apparaître un soupçon de fraude 
+fiscale n'est pas une tâche simple, même avec l'aide d'un ordinateur.
+Si la collection de données est trop grande, le flair du journaliste pourra l'aider
+à cibler un sous-ensemble des données.
+
+
+L'exploitation des données peut aussi se faire à l'aide du public. Les 400000 notes 
+de frais des 
+parlementaires britanniques analysées par le \textit{Telegraph} n'auraient pu être
+entièrement révisées par la rédaction. Ce sont donc les internautes qui pouvaient
+signaler sur le site internet quelles données méritaient un examen plus approfondi. 
 
 
 \subsection{Communication des données}
 
+Les données peuvent bien sûr servir de base à la rédaction d'un ou plusieurs articles.
+Si les données sont numériques, elles peuvent être représentées sous la forme de 
+graphiques.
+
+Néanmoins, le fait de disposer de données sous forme informatique permet aussi de 
+les intégrer dans des dispositifs de visualisation multimédia.
+Les cartes se prêtent bien à cet exerice. Un journaliste qui dispose de la qualité
+de l'eau à chaque endroit de baignade en Wallonie peut réaliser une carte interactive
+des plages où l'eau est propre. N'oublions pas non plus Adrian Holovaty, dont les \og 
+cartes du crime \fg indiquaient précisément les lieux à risque.
+
+Cette visualisation peut aussi faire apparaître une réalité qui ne transparaîssait 
+pas directement dans les tablaux de chiffres. 
+
+Notons que bon nombre d'outils simples d'utilisation et souvent gratuits sont 
+disponibles sur le web, réduisant ainsi les coûts de développement d'une solution
+propre.
+
+Outre les nouvelles possibilités de visualisation, les outils de journalisme de
+données permettent aussi d'ajouter l'interactivité. L'internaute ne vient plus
+simplement lire un article, ou regarder une carte, destiné à tous. Il peut lui-même
+interroger les données. De nombreux sites de média ont ainsi lancé des 
+applications informatives qui tentent de répondre directement aux questions des internautes.
+
+On le voit, le journalisme de données pousse à repenser la manière dont l'information 
+est communiquée au public. Une des clés, selon Jer Thorp cité dans \cite{handbookfr} 
+serait de parvenir à rendre \og humaine \fg une série de chiffres. Le public doit 
+percevoir que les informations qu'on lui présente concernent des humains, et ne sont 
+pas uniquement des statistiques abstraites. La visualisation et les applications 
+interactives permettent de mettre en évidence cette humanité. 
 
 La plupart des spécialistes du journalisme de données recommandent de republier les
 données originales -- lorsque cela est possible en regard des lois, notamment celles 
@@ -145,6 +225,3 @@ du travail journalistique (chacun peut vérifier les affirmations du journaliste
 Cela participe aussi de l'entraide journalistique : si un confrère cherche des données
 sur le sujet concerné, son travail s'en trouvera raccourci.
 
-\section{En pratique}
-
-Il faut engager des développeurs, ça prend du temps...
