@@ -76,7 +76,8 @@ Son exemple: en plus de publier un article traitant d'un incendie dans le
 journal local, autant publier un site recensant tous les incendies du quartier 
 et permettant de les trier selon une série de critères par type, lieu, date\dots
 Il réalisera ensuite une série de \og cartes du crime \fg de 
-Chicago. Ces cartes permettaient\footnote{Le site \textit{ChicagoCrime} n'est plus en ligne aujourd'hui.} à chacun vérifier quels crimes étaient commis dans le voisinage, et de se faire une idée de la dangerosité de l'un ou l'autre quartier.
+Chicago \cite{bradshaw}. Ces cartes permettaient\footnote{Le site \textit{ChicagoCrime} n'est plus en ligne aujourd'hui.} à chacun vérifier quels crimes étaient commis dans le voisinage, et de se faire une idée de la dangerosité de l'un ou l'autre quartier.
+Pour Holovaty, le journalisme comporte trois tâches de base : rassembler l'information, la distiller et la présenter au public; ces trois tâches sont juste réalisées différemment par les journalistes de données \cite{bradshaw}.
 
 
 Les racines du journalisme de données remontent pourtant à plus d'un demi-siècle.
@@ -88,10 +89,10 @@ années 1970, Philip Meyer propose d'adapter les techniques quantitatives des
 sciences sociales au journalisme \cite{meyer}.
 
 Le journalisme de données a profité d'Internet, qui offre la possibilité de
-mettre des données à disposition de tous, sous forme informatique. Concomitamment aux 
+mettre des données à disposition de tous, sous forme informatique. Un peu après les 
 premières expérimentations de Holovaty et ses confrères, le mouvement de 
 l'\em open data\em\,(littéralement : \og données ouvertes \fg) revendique un
-accès aux données des administrations publiques. Dans la plupart des régimes 
+accès aux données des administrations publiques \cite{bradshaw}. Dans la plupart des régimes 
 démocratiques, il est prévu, au moins théoriquement, que les autorités rendent 
 des comptes au citoyen, en permettant l'accès aux actes de l'administration
 (\em Freedom of Information Act\em\,aux États-Unis, directive européenne \og Informations du secteur public \fg de 2003\dots).
@@ -126,9 +127,13 @@ Cette techique permet de faire \og remonter\fg des documents noyés dans la mass
 \item Il existe aussi de nombreuses bases de données disponibles en ligne (par exemple : DataHub\footnote{\url{http://datahub.io/}} permet de trouver des collections de données, en fonction de mots-clés).
 \item Le \textit{scraping} est une technique consistant à récupérer le contenu d'une page web ou d'un ensemble de pages, et d'en extraire les éléments intéressants à 
 l'aide d'un programme informatique.
+\item Les données peuvent être en direct \cite{bradshaw}. Ainsi, Twitter publie en direct les \textit{Trending Topics}, c'est à dire la liste des mots les plus utilisés
+dans les tweets du moment. Les données de bases sont ici les tweets des dernières minutes.
 \item Des bases de données non publiques existent : mises en places en interne pour des recherches universitaires, par des passionnés, par des associations... elles nécessitent alors un contact pour y avoir accès.
 \item Le \em crowdsourcing\em\, (en français : externalisation des connaissances), repose sur le principe de \og l'appel à la foule \fg et profite de l'aide du public pour
 construire ou compléter la base de données.
+\item On peut enfin réaliser sa base de données soi-même, en compilant minutieusement
+les faits, les articles de journaux, les études partielles, voire en se rendant sur le terrain.
 \end{itemize}
 
 \subsection{Nettoyage des données}
@@ -151,8 +156,9 @@ pays, mais il faut le faire comprendre à l'ordinateur).
 \subsection{Exploitation des données}
 
 Pour trouver une information pertinente dans un lot de données, il faut d'abord établir
-une liste de questions auxquelles on cherche une réponse. Ces questions vont permettre d'angler la recherche. Par exemple, si l'on dispose des chiffres de la Politique Agricole Commune de l'Union européenne, il faut s'avoir si l'on s'intéresse à un ou à plusieurs états, sur quelle période, à toutes les exploitations ou à une catégorie particulière\dots pour pouvoir répondre à la question "Les très petites fermes sont-elles menacées par la PAC?".
+une liste de questions auxquelles on cherche une réponse. Ces questions vont permettre d'angler la recherche. Par exemple, si l'on dispose des chiffres de la Politique Agricole Commune de l'Union européenne, il faut s'avoir si l'on s'intéresse à un ou à plusieurs états, sur quelle période, à toutes les exploitations ou à une catégorie particulière\dots pour pouvoir répondre à la question "Les très petites fermes sont-elles menacées par la PAC?". 
 
+L'objectif du journaliste de données est de rendre accessibles des faits complexes \cite {bradshaw}. 
 Tirer des informations signifiantes de données chiffrées n'est pas une tâche 
 évidente. Le journaliste aura d'ailleurs 'tout intérêt à réviser les concepts statistiques de base. 
 Nicolas Kayser-Bril rappelle dans \cite{handbookfr} les trois questions à se poser 
@@ -186,23 +192,29 @@ signaler sur le site internet quelles données méritaient un examen plus approf
 
 \subsection{Communication des données}
 
-Les données peuvent bien sûr servir de base à la rédaction d'un ou plusieurs articles.
-Si les données sont numériques, elles peuvent être représentées sous la forme de 
-graphiques.
+Une fois que l'on a déterminé ce qu'elles contiennent d'intéressant, les données peuvent bien sûr servir de base à la rédaction d'un ou plusieurs articles.
 
-Néanmoins, le fait de disposer de données sous forme informatique permet aussi de 
-les intégrer dans des dispositifs de visualisation multimédia.
-Les cartes se prêtent bien à cet exerice. Un journaliste qui dispose de la qualité
-de l'eau à chaque endroit de baignade en Wallonie peut réaliser une carte interactive
-des plages où l'eau est propre. N'oublions pas non plus Adrian Holovaty, dont les \og 
-cartes du crime \fg indiquaient précisément les lieux à risque.
+Si les données sont numériques, elles peuvent être représentées sous la forme de 
+graphiques, c'est ce qu'on appelle la visualisation.
 
 Cette visualisation peut aussi faire apparaître une réalité qui ne transparaîssait 
 pas directement dans les tablaux de chiffres. 
 
+Néanmoins, le fait de disposer de données sous forme informatique permet aussi de 
+les intégrer dans des dispositifs de visualisation multimédia, en combinant différents services -- ce que les anglophones appellent le \textit{mashup} \cite{bradshaw}.
+
+Les cartes se prêtent bien à cet exercice lorsque les données sont géographiquement signifiantes. Un journaliste qui dispose de la qualité
+de l'eau à chaque endroit de baignade en Wallonie peut réaliser une carte interactive
+des plages où l'eau est propre. N'oublions pas non plus Adrian Holovaty, dont les \og 
+cartes du crime \fg indiquaient précisément les lieux à risque.
+
+Les nuages de mots sont fort utiles pour représenter des données textuelles. Ils 
+permettent de visualiser directement quels sont les mots les plus utilisés dans un texte \cite{bradshaw}. (Par exemple : le nuage de mots d'un discours politique pourra rapidement mettre en évidence les éléments de langage d'un politicien.)
+
 Notons que bon nombre d'outils simples d'utilisation et souvent gratuits sont 
 disponibles sur le web, réduisant ainsi les coûts de développement d'une solution
 propre.
+
 
 Outre les nouvelles possibilités de visualisation, les outils de journalisme de
 données permettent aussi d'ajouter l'interactivité. L'internaute ne vient plus
@@ -223,5 +235,5 @@ consacrées à la protection de la vie privée, ou en fonction d'une éventuelle
 d'utilisation sur les données d'origine. Cette republication renforce la transparence
 du travail journalistique (chacun peut vérifier les affirmations du journaliste).
 Cela participe aussi de l'entraide journalistique : si un confrère cherche des données
-sur le sujet concerné, son travail s'en trouvera raccourci.
+sur le sujet concerné, son travail s'en trouvera raccourci. Certains médias comme \textit{The Guardian} disposent maintenant d'un \textit{datablog}.
 
